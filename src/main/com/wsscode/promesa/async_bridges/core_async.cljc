@@ -1,11 +1,13 @@
 (ns com.wsscode.promesa.async-bridges.core-async
-  (:require [clojure.core.async :refer [go <!]]
-            #?(:cljs [clojure.core.async.impl.channels :refer [ManyToManyChannel]])
-            [promesa.core :as p]
-            [promesa.protocols])
-  #?(:clj (:import [clojure.core.async.impl.channels ManyToManyChannel])))
-
-; region core.async extension
+  (:require
+    [clojure.core.async :refer [go <!]]
+    #?(:cljs [clojure.core.async.impl.channels :refer [ManyToManyChannel]])
+    [promesa.core :as p]
+    [promesa.protocols])
+  #?(:clj
+     (:import
+       (clojure.core.async.impl.channels
+         ManyToManyChannel))))
 
 (defn error?
   "Returns true if err is an error object."
@@ -29,5 +31,3 @@
   promesa.protocols/IPromiseFactory
   (-promise [this]
     (chan->promise this)))
-
-; endregion
