@@ -1,6 +1,6 @@
-{:config-paths ["../resources/clj-kondo.exports/com.wsscode/PROJECT_NAME"]
- :lint-as      {com.fulcrologic.guardrails.core/>def    clojure.spec.alpha/def
-                com.fulcrologic.guardrails.core/>defn   clojure.core/defn}
+{:config-paths []
+ :lint-as      {com.fulcrologic.guardrails.core/>def  clojure.spec.alpha/def
+                com.fulcrologic.guardrails.core/>defn clojure.core/defn}
  :linters      {:unsorted-required-namespaces {:level :warning}
                 :invalid-arity                {:level :error}
                 :missing-else-branch          {:level :off}
