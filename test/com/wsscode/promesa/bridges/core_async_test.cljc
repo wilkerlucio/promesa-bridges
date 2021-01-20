@@ -1,4 +1,4 @@
-(ns com.wsscode.promesa.async-bridges.core-async-test
+(ns com.wsscode.promesa.bridges.core-async-test
   (:require
     [clojure.core.async :as async]
     [clojure.test :refer [deftest is are run-tests testing]]

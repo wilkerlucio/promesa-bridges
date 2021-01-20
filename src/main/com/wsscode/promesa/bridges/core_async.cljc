@@ -1,4 +1,4 @@
-(ns com.wsscode.promesa.async-bridges.core-async
+(ns com.wsscode.promesa.bridges.core-async
   (:require
     [clojure.core.async :refer [go <!]]
     #?(:cljs [clojure.core.async.impl.channels :refer [ManyToManyChannel]])
