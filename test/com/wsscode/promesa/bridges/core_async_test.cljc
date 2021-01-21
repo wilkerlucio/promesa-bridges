@@ -16,12 +16,14 @@
 #?(:cljs
    (deftest read-from-async-chan-test
      (async done
-            (async/go
-              (is (= (async/<! (p/let [val (let [c (async/chan)]
-                                             (async/put! c "value")
-                                             c)]
-                                 val))
-                     "value"))
-              (done)))))
+       (async/go
+         (p/then (p/let [val (let [c (async/chan)]
+                               (async/put! c "value")
+                               c)]
+                   val)
+                 (fn [val]
+                   (is (= val
+                          "value"))))
+         (done)))))
 
 
